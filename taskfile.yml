@@ -1,0 +1,14 @@
+# Taskfile
+version: '3'
+
+env:
+  ENV: '{{.ENV | default "test"}}'
+
+dotenv: ['common.env', '{{.ENV}}.env']
+
+tasks:
+  default:
+    cmds:
+      - echo "Environment '{{.ENV}}'"
+      - echo "Using '$KEYNAME' and endpoint '$ENDPOINT'"
+    silent: true
