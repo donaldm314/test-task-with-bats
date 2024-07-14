@@ -12,6 +12,3 @@ tasks:
       - echo "ENV '{{.ENV}}', endpoint '$ENDPOINT'"
     silent: true
 
-  test:
-    cmds:
-      - bats **/*.bats

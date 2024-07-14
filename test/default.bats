@@ -8,5 +8,11 @@ FALSE=1
 
 @test "Default environment is test" {
     run -$TRUE task
-    [ "${lines[0]}" = "ENV 'test', endpoint 'testing.com'" ]
+    [ "$output" = "ENV 'test', endpoint 'testing.com'" ]
+}
+
+@test "prod environment uses production.com" {
+    export ENV=prod
+    run -$TRUE task
+    [ "$output" = "ENV 'prod', endpoint 'production.com'" ]
 }
