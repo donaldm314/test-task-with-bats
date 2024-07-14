@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+    branches: [main]
+
+jobs:
+  lint-and-unit:
+    runs-on: ubuntu-latest
+    container: donaldm314/ubuntu-bats:53
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Install dependencies"
+        run: |
+          bats --version
+          ./bats.sh
