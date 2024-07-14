@@ -11,7 +11,7 @@ jobs:
       options: --user root
     steps:
       - uses: actions/checkout@v4
-      - name: "Install dependencies"
+      - name: "Test task with bats"
         run: |
           bats --version
           ./bats.sh
