@@ -9,6 +9,9 @@ dotenv: ['common.env', '{{.ENV}}.env']
 tasks:
   default:
     cmds:
-      - echo "Environment '{{.ENV}}'"
-      - echo "Using '$KEYNAME' and endpoint '$ENDPOINT'"
+      - echo "ENV '{{.ENV}}', endpoint '$ENDPOINT'"
     silent: true
+
+  test:
+    cmds:
+      - bats **/*.bats
