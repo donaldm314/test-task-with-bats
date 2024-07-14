@@ -1,10 +1,7 @@
 #!/usr/bin/env bats
 
-# So we can pass flags to run
-bats_require_minimum_version 1.5.0
-
-TRUE=0
-FALSE=1
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BATS_TEST_FILENAME}")" &>/dev/null && pwd)
+source ${SCRIPT_DIR}/common
 
 @test "Default environment is test" {
     run -$TRUE task
