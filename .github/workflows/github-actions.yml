@@ -4,9 +4,11 @@ on:
     branches: [main]
 
 jobs:
-  lint-and-unit:
+  test:
     runs-on: ubuntu-latest
-    container: donaldm314/ubuntu-bats:53
+    container:
+      image: donaldm314/ubuntu-bats:53
+      options: --user root
     steps:
       - uses: actions/checkout@v4
       - name: "Install dependencies"
