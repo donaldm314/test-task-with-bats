@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: donaldm314/ubuntu-bats:53
-      options: --user ubuntu
+      options: --user root
     steps:
       - uses: actions/checkout@v4
       - name: "Test task with bats"
