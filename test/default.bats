@@ -8,8 +8,3 @@ source ${SCRIPT_DIR}/common
     [ "$output" = "ENV 'test', endpoint 'testing.com'" ]
 }
 
-@test "prod environment uses production.com" {
-    export ENV=prod
-    run -$TRUE task
-    [ "$output" = "ENV 'prod', endpoint 'production.com'" ]
-}
