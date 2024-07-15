@@ -21,3 +21,6 @@ tasks:
           echo "Skipping in ENV '{{.ENV}}'"
         fi
     silent: true
+
+  all:
+    deps: [default, conditional]
