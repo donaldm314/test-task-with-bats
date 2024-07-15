@@ -12,3 +12,7 @@ tasks:
       - echo "ENV '{{.ENV}}', endpoint '$ENDPOINT'"
     silent: true
 
+  conditional:
+    cmds:
+      - if [ "{{.ENV}}" = "prod" ]; then echo "Running conditionally"; else echo "Skipping in ENV '{{.ENV}}'"; fi
+    silent: true
